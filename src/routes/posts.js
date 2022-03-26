@@ -3,12 +3,10 @@ const router = express.Router();
 const Verify = require("./verifyToken");
 router.get("/", Verify, (req, res) => {
   res.json({
-    users: {
-      firstName: "saurabh",
-      lastName: "tiwary",
-      email: "saurabh.tiwary@bacancy.com",
-      password: "saurabh@1234",
-    },
+    firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        email:req.body.email
+        
   });
 });
 module.exports = router;
